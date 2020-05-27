@@ -1,0 +1,29 @@
+Given two arrays of integers and asked to determine all integers that satisfy the following two conditions:
+
+The elements of the first array are all factors of the integer being considered.
+The integer being considered is a factor of all elements of the second array.
+These numbers are referred to as being between the two arrays. Determine how many such numbers exist.
+input format:
+a: an array of integers
+b: an array of integers
+output format:
+Print the number of integers that are considered to be between a and b.
+code:
+count=0
+count2=0
+i=max(a)
+j=i
+while True:
+    if i>min(b): # if i is greater than smallest element of b recursion terminates.
+        break
+    res=all(i%k==0 for k in a) # checking if elements of a are all factors of i.
+    if res==False:
+        i=i+1
+        j=i
+    else:
+        count2=count2+1
+        i=j*count2
+        res2=all(k%i==0 for k in b) # checking if the integer being considered is a factor of all elements of the b.
+        if res2==True:
+            count=count+1
+    return count
