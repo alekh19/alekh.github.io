@@ -1,2 +1,2 @@
 # my_python
-A repository of some of my python codes
+A repository of some of my python codes.
