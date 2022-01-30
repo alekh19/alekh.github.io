@@ -11,4 +11,4 @@ def timeConversion(s):
                 list1[0]=str(int(list1[0])+12) #Adding 12 for time between 1pm to 11 pm
                 break
     list1[-1]=(list1[-1])[:-2] #Removing AM/PM
-    return ':'.join(map(str, list1))
+    return ':'.join(list1)
